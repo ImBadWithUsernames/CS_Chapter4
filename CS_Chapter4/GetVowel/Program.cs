@@ -10,13 +10,26 @@ namespace GetVowel
     {
         static void Main(string[] args)
         {
-            Console.Write("Please name a vowel in caps. Type '!' to end.");
+            Console.Write("Please name a vowel. Type '!' to end. : ");
             String input = Console.ReadLine().ToUpper();
             while (input != "!")
             {
-                while (input == "E" || "U" || "I" || "O" || "A")
+                input = Console.ReadLine().ToUpper();
+                if (input == "E")
                     Console.WriteLine("OK");
-                Console.WriteLine("ERROR");
+                else if (input == "U")
+                    Console.WriteLine("OK");
+                else if (input == "I")
+                    Console.WriteLine("OK");
+                else if (input == "O")
+                    Console.WriteLine("OK");
+                else if (input == "A")
+                    Console.WriteLine("OK");
+                else
+                    Console.WriteLine("ERROR");
+                
+                Console.Write("Please name another. : ");
+
             }
 
         }

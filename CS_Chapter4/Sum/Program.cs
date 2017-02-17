@@ -17,12 +17,9 @@ namespace Sum
             int sum = number1 + number2;
             while (sum < 999)
             {
+                Console.WriteLine("= {0}", sum);
                 Console.Write("+ ");
-                int number3 = Convert.ToInt32(Console.ReadLine());
-                int sum2 = sum + number3;
-                Console.WriteLine("= {0}", sum2);
-
-
+                sum = sum + Convert.ToInt32(Console.ReadLine());
             }
                 
         }

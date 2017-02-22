@@ -10,34 +10,46 @@ namespace TubSales
     {
         static void Main(string[] args)
         {
-            Console.Write("Greetings employee. Please provide your inital. : ");
+            Console.Write("Greetings employee. Please provide your initial : ");
             string initial = Console.ReadLine().ToUpper();
+            double ACom = 0, BCom = 0, ECom = 0;
+
             while (initial != "Z")
             {
                 if (initial == "A")
                 {
-                    Console.WriteLine("Greetings Andrea.");
-                    Console.Write("How much did you sell today? : ");
+                    Console.Write("Greetings Andrea. How much did you sell today? : ");
                     double ASell = Convert.ToDouble(Console.ReadLine());
-                    double ACom = ASell * .10;
+                    ACom = ACom + ASell * .10;
                 }
                 else if (initial == "B")
                 {
-                    Console.WriteLine("Greetings Brittany.");
-                    Console.Write("How much did you sell today? : ");
+                    Console.Write("Greetings Brittany. How much did you sell today? : ");
                     double BSell = Convert.ToDouble(Console.ReadLine());
-                    double BCom = BSell * .10;
+                    BCom = BCom + BSell * .10;
                 }
                 else if (initial == "E")
                 {
-                    Console.WriteLine("Greetings Eric.");
-                    Console.Write("How much did you sell today? : ");
+                    Console.Write("Greetings Eric. How much did you sell today? : ");
                     double ESell = Convert.ToDouble(Console.ReadLine());
-                    double ECom = ESell * .10;
+                    ECom = ECom + ESell * .10;
                 }
-                else Console.Write("ERROR EMPLOYEE NOT FOUND")
-            Console.WriteLine("Andrea's total commission is {0}.", ACom);
+                else
+                {
+                    Console.WriteLine("I don't recognize that employee.");
+                }
+
+                Console.Write("Please provide another employee initial : ");
+                initial = Console.ReadLine().ToUpper();
+
+
             }
+
+            // Output each seller's commision
+            Console.WriteLine("\nTotal Commission For Each Employee\n=========================================");
+            Console.WriteLine("  Andrea              {0}", ACom.ToString("C"));
+            Console.WriteLine("  Brittany            {0}", BCom.ToString("C"));
+            Console.WriteLine("  Eric                {0}", ECom.ToString("C"));
         }
     }
 }
